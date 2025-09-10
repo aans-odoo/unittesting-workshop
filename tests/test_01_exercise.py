@@ -10,7 +10,7 @@ from odoo.tests.common import TransactionCase
 #        is correctly linked.
 # 
 # Helpers -
-#   To create a product and tag:
+#   To create a product and tag you can use:
 #     ```
 #     product_tag = self.env['product.tag'].create({'name': 'Test Tag'})
 #     product = self.env['product.product'].create({
@@ -20,7 +20,7 @@ from odoo.tests.common import TransactionCase
 #     })
 #     ```
 
-class TestClass(TransactionCase):
+class TestClass01(TransactionCase):
 
-    def test_case(self):
+    def test_case_01(self):
         self.assertEqual(1, 1)
