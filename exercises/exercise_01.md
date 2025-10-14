@@ -11,10 +11,21 @@
 ## Helpers -
   To create a product and tag you can use:
     ```
-    product_tag = self.env['product.tag'].create({'name': 'Test Tag'})
+    # product with listing price
     product = self.env['product.product'].create({
         'name': 'Test Product',
         'lst_price': 99.0,
-        'all_product_tag_ids': [(4, product_tag.id)],
+    })
+
+    # product with tags
+    product_tag = self.env['product.tag'].create({'name': 'Test Tag'})
+    product = self.env['product.product'].create({
+        'name': 'Test Product 2',
+        'lst_price': 99.0,
+        'product_tag_ids': [product_tag.id],
     })
     ```
+
+  Tip:
+  use 'TransactionCase' to create your test class -
+  `from odoo.tests.common import TransactionCase`
